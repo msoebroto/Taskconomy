@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskconomy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>💸Taskconomy</h1>
+    <div class="auth-box" id="authBox">
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <label><input type="checkbox" id="showPassword"> Show</label>
+        <button id="authButton" onclick="handleAuth()">Login / Signup</button>
+    </div>
+  </header>
+
+  <!-- Description before login -->
+  <section id="description" class="centered-description">
+        <h2>Welcome to Taskconomy!</h2>
+        <p>
+            Taskconomy helps you maximize your productivity and reward yourself for your hard work.
+        </p>
+        <ul>
+            <li>Add tasks and track your productive hours, or use the timer for automatic tracking.</li>
+            <li>Earn points for each hour of productivity (1 hour = 10 points).</li>
+            <li>Redeem points for recreational time (1 hour of reward costs 40 points).</li>
+            <li>Use the reward timer or manually enter hours and minutes.</li>
+            <li>Undo or delete redeemed rewards if you change your mind.</li>
+            <li>All your progress is saved under your username and password.</li>
+        </ul>
+    </section>
+
+  <!-- App Content -->
+  <main id="app">
+        <div class="points-box">
+            <h2>Your Points</h2>
+            <p id="points">0</p>
+        </div>
+
+        <!-- Add Task -->
+        <div class="add-task">
+            <input type="text" id="taskTitle" placeholder="Task title">
+            
+            <!-- Hours and minutes -->
+            <input type="number" id="taskHours" placeholder="Hours" value="0" min="0" style="width:60px;">
+            <input type="number" id="taskMinutes" placeholder="Minutes" value="30" min="0" max="59" style="width:60px;">
+            
+            <!-- Category selection -->
+            <select id="taskCategory">
+                <option value="Work">Work</option>
+                <option value="Exercise">Exercise</option>
+                <option value="Studying">Studying</option>
+                <option value="Chores">Chores</option>
+            </select>
+
+            <button onclick="addTask()">Add Task</button>
+        </div>
+
+        <!-- Timer row for tasks -->
+        <div class="task-timer-row">
+            <button id="startTaskTimerBtn" onclick="startTaskTimer()">Start Timer</button>
+            <button id="stopTaskTimerBtn" onclick="stopTaskTimer()" disabled>Stop Timer</button>
+            <span id="taskTimerDisplay">00:00:00</span>
+        </div>
+
+
+        <div class="task-list" id="taskList"></div>
+
+        <!-- Reward Redemption -->
+        <h2 style="text-align:center; margin-top:40px;">🎁 Redeem Rewards</h2>
+        <div class="redeem-section">
+            <input type="text" id="rewardName" placeholder="Reward (e.g. Gaming)">
+            
+            <!-- Manual time input -->
+            <input type="number" id="rewardHours" placeholder="Hours" value="0" min="0" style="width:60px;">
+            <input type="number" id="rewardMinutes" placeholder="Minutes" value="30" min="0" max="59" style="width:60px;">
+            
+            <select id="rewardCategory">
+                <option value="Gaming">Gaming</option>
+                <option value="Watching">Watching Shows</option>
+                <option value="Spending">Spending Money</option>
+            </select>
+
+            <button onclick="redeemReward()">Redeem</button>
+        </div>
+
+        <!-- Timer row below manual inputs -->
+        <div class="reward-timer-row">
+            <button id="startTimerBtn" onclick="startRewardTimer()">Start Timer</button>
+            <button id="stopTimerBtn" onclick="stopRewardTimer()" disabled>Stop Timer</button>
+            <span id="timerDisplay">00:00:00</span>
+        </div>
+
+        <!-- Container to show redeemed rewards -->
+        <div class="reward-history" id="rewardHistory">
+        </div>
+
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

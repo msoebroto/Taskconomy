@@ -1,0 +1,182 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f4f6;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2563eb;
+  color: white;
+  padding: 10px 20px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+.auth-box {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.auth-box input {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+.auth-box button {
+  padding: 5px 10px;
+  background: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.auth-box button:hover {
+  background: #15803d;
+}
+
+main {
+  padding: 20px;
+  display: none; /* hidden until login */
+}
+
+.points-box {
+  background: #fff;
+  border: 2px solid #4ade80;
+  padding: 15px;
+  text-align: center;
+  width: 200px;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+.add-task, .redeem-section {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input, button {
+  padding: 8px;
+  border-radius: 5px;
+}
+
+button {
+  cursor: pointer;
+  background: #3b82f6;
+  color: white;
+  border: none;
+}
+
+button:hover {
+  background: #2563eb;
+}
+
+.task-list, .reward-history {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.task, .reward-item{
+  background: white;
+  border: 1px solid #ddd;
+  border-left: 5px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+}
+
+/* Only strike through the task text, not buttons */
+.task.completed .task-title s{
+  text-decoration: line-through;
+  color: #555;
+}
+
+/* Keep the background change and left border for completed tasks */
+.task.completed, .reward-item {
+  background: #dcfce7;
+  border-left-color: #22c55e;
+}
+
+
+.task-actions button, .reward-actions button {
+  margin-left: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.delete-btn {
+  background: #ef4444;
+}
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+.centered-description {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 15px;
+  padding: 40px 50px;
+  max-width: 700px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.centered-description h2 {
+  margin-top: 0;
+  font-size: 2em;
+  color: #2563eb;
+}
+
+.centered-description p {
+  font-size: 1.1em;
+  margin: 15px 0;
+  color: #374151;
+}
+
+.centered-description ul {
+  text-align: left;
+  margin: 20px auto 0;
+  padding-left: 20px;
+}
+
+.centered-description li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+#app {
+  display: none; /* hidden until login */
+  padding: 20px;
+}
+
+.reward-timer-row, .task-timer-row{
+    display: flex;
+    justify-content: center; /* centers the row horizontally */
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+#timerDisplay, #taskTimerDisplay{
+    min-width: 80px;
+    font-weight: bold;
+    text-align: center;
+}
+.reward-history {
+    margin-top: 20px;
+}
