@@ -181,6 +181,33 @@ button:hover {
     margin-top: 20px;
 }
 
+/* Container adjustments */
+.container {
+  width: 100%;
+  max-width: 500px; /* keeps it from getting too wide on desktop */
+  margin: auto;
+  padding: 10px;
+}
+
+/* Input and buttons scale properly */
+input, button, select {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Timers inline only on wider screens */
+.timer-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 /* Mobile adjustments */
 @media (max-width: 768px) {
     header {
@@ -235,5 +262,9 @@ button:hover {
     .centered-description p,
     .centered-description li {
         font-size: 1em;
+    }
+
+    .timer-controls {
+    flex-direction: row;
     }
 }
