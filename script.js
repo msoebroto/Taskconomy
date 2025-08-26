@@ -9,11 +9,7 @@ document.getElementById("showPassword").addEventListener("change", (e) => {
 function handleAuth() {
   if (currentUser) {
     // Logout
-    currentUser = null;
-    document.getElementById("authButton").textContent = "Login / Signup";
-    document.getElementById("app").style.display = "none";
-    document.getElementById("username").value = "";
-    document.getElementById("password").value = "";
+    logout();
     return;
   }
 
@@ -48,9 +44,11 @@ function handleAuth() {
 }
 
 function logout() {
-  localStorage.removeItem("currentUser");
+  currentUser = null;
   document.getElementById("authBox").style.display = "block";
   document.getElementById("app").style.display = "none";
+  document.getElementById("username").value = "";
+  document.getElementById("password").value = "";
   document.getElementById("authButton").textContent = "Login / Signup";
   document.getElementById("description").style.display = "block";
 }
